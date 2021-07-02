@@ -93,7 +93,7 @@ export default {
     file: null,
     fileName: "",
     selected: null,
-    filePath: "E:/contract/test1.sol",
+    filePath: "./contracts/test1.sol",
     contractAddress: "",
   }),
   computed: mapGetters(["walletAddress", "storiesBlockchain"]),

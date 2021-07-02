@@ -14,7 +14,7 @@
           Link to the Story
         </a> -->
         <div class="address">
-          NFT-ID:{{ data.contractAddress }}(contract address)
+          <span>NFT-ID:</span>  {{ data.contractAddress }} (contract address)
           <button
             type="button"
             class="btn btn-primary primary-bg-color"
@@ -82,14 +82,14 @@ export default {
     },
     async showContractData() {
       this.contractData =
-        "    * * *   * * * \n" +
+        "   * * *     * * * \n" +
         "  * * * * * * * * * \n" +
         " * * * * * * * * * * \n" +
         "  * * * * * * * * *  \n" +
-        "    * * * * * * * \n" +
-        "      * * * * * \n" +
-        "        * * * \n" +
-        "          *";
+        "   * * * * * * * \n" +
+        "     * * * * * \n" +
+        "       * * * \n" +
+        "        *";
     },
   },
 
@@ -112,6 +112,12 @@ h2 {
 
 .address {
   margin: 1vw 0;
+  white-space: pre-wrap;
+}
+
+.address span{
+  font-weight: 800;
+  margin-right: 1vw;
 }
 
 .contract-data {
