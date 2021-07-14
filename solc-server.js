@@ -56,11 +56,24 @@ app.use(function(req, res, next) {
 });
 
 app.get("/compile", function(req, res) {
-  console.log(req.query.file);
-  if (req.query.file) {
-    let file = req.query.file;
-    const input = fs.readFileSync(file, "utf-8");
+  if (req.query) {
+    let res = req.query;
+    const input = 
+    "// SPDX-License-Identifier: GPL-3.0\n"+
+    "pragma solidity >=0.4.16 <0.9.0;"+
+    "contract Storage {"+
+        "function get() public pure returns(string memory title,string memory authorName,string memory preview,"+
+          "string memory price,string memory fileHash){"+
+        
+         `title = unicode'${res.title}';`+
+         `authorName = unicode'${res.authorName}';`+
+         `preview = unicode'${res.preview}';`+
+         `price = '${res.price}';`+
+         `fileHash = '${res.uploadedFileHash}';`+
+         "return(title,authorName,preview,price,fileHash);}}" ;
+
     console.log(input);
+
     let jsonContractSource = JSON.stringify({
       language: "Solidity",
       sources: {
@@ -82,11 +95,10 @@ app.get("/compile", function(req, res) {
     // 编译得到结果
     let output = JSON.parse(solc.compile(jsonContractSource));
     console.log("output:", output);
-    teamJson = {
+    var teamJson = {
       abi: {},
       bytecode: "",
     };
-
     // output 为json对象，根据json结构保存对应的abi和bytecode
     for (var contractName in output.contracts["test1.sol"]) {
       teamJson.abi = output.contracts["test1.sol"][contractName].abi;
@@ -98,10 +110,11 @@ app.get("/compile", function(req, res) {
       if (err) console.error(err);
       console.log("team contract compiled sucessfully.");
     });
-
-    res.send(teamJson);
+console.log(teamJson)
+    // res.send(teamJson);
     // Contract object
   }
+  res.send(teamJson);
   res.end();
 });
 

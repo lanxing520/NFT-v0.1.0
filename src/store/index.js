@@ -4,8 +4,10 @@ import storiesBlockchain from './storiesBlockchain';
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
+const store = new Vuex.Store({
   modules: {
     storiesBlockchain
   }
 });
+
+export default store

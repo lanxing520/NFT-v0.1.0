@@ -28,6 +28,7 @@
     "@fleekhq/fleek-storage-js": "^1.0.14",
     "@openzeppelin/contracts": "^3.4.1",
     "@spacehq/sdk": "0.0.30",
+    "bignumber.js": "^9.0.1",
     "body-parser": "^1.18.3",
     "express": "^4.17.1",
     "ganache-cli": "^6.10.1",
@@ -61,7 +62,7 @@
     "split.js": "^1.6.2",
     "vue": "^2.6.12",
     "vue-template-compiler": "^2.6.12",
-    "web3": "^1.2.11",
+    "web3": "^1.4.0",
     "webpack": "^4.44.1"
   },
   "eslintConfig": {

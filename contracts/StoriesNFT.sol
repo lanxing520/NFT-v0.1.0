@@ -17,7 +17,7 @@ contract StoriesNFT is ERC721 {
         uint date;
         address payable authorAddress;
     }
-
+    
     event StoryCreated (
         uint storyId,
         string title,

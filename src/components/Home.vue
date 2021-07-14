@@ -1,11 +1,11 @@
 <template>
   <div class="home container mt-4">
     <div class="d-flex justify-content-between align-items-center">
-      <h1>List of Stories</h1>
-      <router-link class="btn btn-primary secondary-bg-color" to="/create-story">Create Story</router-link>
+      <h1> All wishes</h1>
+      <router-link class="btn btn-primary secondary-bg-color" to="/create-story">Make a wish</router-link>
     </div>
     
-    <!-- <a v-bind:href="'https://kovan.etherscan.io/address/'+ walletAddress" target="_blank" rel="noopener noreferrer">Your wallet address: {{walletAddress}}</a> -->
+    <p style="background-color:#fff;width:540px;border-radius:3px;padding-left:10px">Your wallet address: {{walletAddress}}</p> 
 
     <div class="row mt-4">
       <div class="col-sm-12 col-lg-6" v-bind:key="story.storyId" v-for="story of storiesList">
@@ -42,6 +42,7 @@ export default {
 <style scoped>
   .home{
     min-height: 90vh;
+    background:url('../assets/img/wall-001.jpg');
   }
 
   .home__text {
